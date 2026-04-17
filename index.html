@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandro Bagnuoli | Axel0689</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style id="bg-dynamic"></style>
+    <script src="shared.js"></script>
+    <script src="iconResolver.js"></script>
+</head>
+<body>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="btn-it" class="active">IT</button>
+        <button id="btn-en">EN</button>
+    </div>
+
+    <div class="container" id="main-container"></div>
+    <footer id="main-footer"></footer>
+
+    <!-- =====================================================
+         SITE DATA — modifica da editor.html oppure qui
+         ===================================================== -->
+    <script id="__SITE_DATA__" type="application/json">
+{
+  "profile": {
+    "name": "Alessandro Bagnuoli",
+    "subtitle": "Full Stack AI Engineer & Generative AI Specialist",
+    "subtitleEn": "Full Stack AI Engineer & Generative AI Specialist",
+    "tagline": "Trasformo idee in sistemi AI funzionanti",
+    "taglineEn": "Turning ideas into real AI systems",
+    "photo": "images/profilo.jpg",
+    "social": [
+      {
+        "icon": "fa-brands fa-linkedin",
+        "label": "LinkedIn",
+        "labelEn": "LinkedIn",
+        "url": "https://www.linkedin.com/in/alessandrobagnuoli89/"
+      },
+      {
+        "icon": "fa-solid fa-link",
+        "label": "My website",
+        "labelEn": "My website",
+        "url": "https://www.alessandrobagnuoli.me/"
+      },
+      {
+        "icon": "fa-brands fa-x-twitter",
+        "label": "X",
+        "labelEn": "X",
+        "url": "https://x.com/alex_bagnuoli89"
+      },
+      {
+        "icon": "fa-solid fa-envelope",
+        "label": "Email",
+        "labelEn": "Email",
+        "url": "mailto:bagnuoli.alex@ik.me"
+      },
+      {
+        "icon": "fa-brands fa-github",
+        "label": "GitHub",
+        "labelEn": "GitHub",
+        "url": "https://github.com/Axel0689"
+      },
+      {
+        "icon": "fa-brands fa-facebook",
+        "label": "Facebook",
+        "labelEn": "Facebook",
+        "url": "https://www.facebook.com/alexbagnuoli89"
+      },
+      {
+        "icon": "fa-brands fa-instagram",
+        "label": "Instagram",
+        "labelEn": "Instagram",
+        "url": "https://www.instagram.com/alexbagnuoli/"
+      }
+    ],
+    "photoStyle": {
+      "size": "large",
+      "shape": "rounded",
+      "ring": "animated",
+      "position": "top"
+    }
+  },
+  "sections": [
+    {
+      "accent": "blue",
+      "icon": "fa-solid fa-folder-open",
+      "title": "Progetti AI Selezionati",
+      "titleEn": "Selected AI Projects",
+      "description": "I miei progetti AI più innovativi.",
+      "descriptionEn": "My most innovative AI projects.",
+      "layout": "list",
+      "links": [
+        {
+          "label": "DocDigest AI: Riassunti intelligenti basati sull'intelligenza artificiale",
+          "labelEn": "DocDigest AI - AI-powered smart summaries",
+          "url": "https://docdigest-zeta.vercel.app",
+          "icon": "fa-solid",
+          "logo": "images/logos/docdigest.png",
+          "brand": "docdigest"
+        },
+        {
+          "label": "Gestore Task (To-Do List Avanzato): Un'applicazione web completa per la gestione dei task, sviluppata con Django e MySQL",
+          "labelEn": "Task Manager (Advanced To-Do List): A comprehensive web application for task management, developed using Django and MySQL",
+          "url": "https://github.com/Axel0689/gestore-task",
+          "icon": "fa-solid",
+          "logo": "images/logos/gestoretask.png",
+          "brand": "gestoretask"
+        },
+        {
+          "label": "File Renamer v0.2: App desktop per rinominare file in modo personalizzato con estensione automatica.",
+          "labelEn": "File Renamer v0.2: A desktop app for renaming files in a customised way with automatic extension.",
+          "url": "https://github.com/Axel0689/file_renamer",
+          "icon": "fa-solid",
+          "logo": "images/logos/filerenamer.png",
+          "brand": "filerenamer"
+        }
+      ]
+    },
+    {
+      "accent": "green",
+      "icon": "fa-solid fa-lightbulb",
+      "title": "Parliamo del tuo progetto",
+      "titleEn": "Let’s talk about your project",
+      "description": "Raccontami cosa hai in mente, ti rispondo con una proposta chiara e senza impegno",
+      "descriptionEn": "Tell me what you have in mind, and I’ll get back to you with a clear, no-obligation proposal",
+      "layout": "list",
+      "links": [
+        {
+          "label": "Contattami",
+          "labelEn": "Contact Me",
+          "url": "https://tally.so/r/mZAEMz",
+          "icon": "fa-solid fa-comment",
+          "logo": "",
+          "brand": ""
+        },
+        {
+          "label": "Richiedi un Preventivo",
+          "labelEn": "Request a Quote",
+          "url": "https://tally.so/r/wLo9kp",
+          "icon": "fa-solid fa-file-invoice",
+          "logo": "",
+          "brand": ""
+        }
+      ]
+    },
+    {
+      "accent": "green",
+      "icon": "fa-brands fa-github",
+      "title": "Esperimenti AI & Strumenti",
+      "titleEn": "AI Experiments & Tools",
+      "description": "Sviluppo e condivido progetti, test e tool AI. Tutto documentato sul mio GitHub.",
+      "descriptionEn": "I build and share AI projects, experiments, and tools. Everything is documented on my GitHub.",
+      "layout": "list",
+      "links": [
+        {
+          "label": "Github Profilo",
+          "labelEn": "GitHub Profile",
+          "url": "https://github.com/Axel0689",
+          "icon": "fa-solid fa-code-branch",
+          "logo": "",
+          "brand": ""
+        }
+      ]
+    },
+    {
+      "accent": "red",
+      "icon": "fa-brands fa-youtube",
+      "title": "Contenuti & AI Creativa",
+      "titleEn": "Content & Creative AI",
+      "description": "Creo contenuti su AI e creatività, tra tutorial, showcase e sperimentazioni sul mio canale YouTube.",
+      "descriptionEn": "I create content about AI and creativity, including tutorials, showcases, and experiments on my YouTube channel.",
+      "layout": "list",
+      "links": [
+        {
+          "label": "Canale YouTube",
+          "labelEn": "YouTube Channel",
+          "url": "https://youtube.com/@axel0689",
+          "icon": "fa-solid fa-play",
+          "logo": "",
+          "brand": ""
+        }
+      ]
+    },
+    {
+      "accent": "amber",
+      "icon": "fa-solid fa-crown",
+      "title": "Ruolo Ambassador",
+      "titleEn": "Ambassador Role",
+      "description": "Promuovo la piattaforma e condivido link diretti per provarla in prima persona.",
+      "descriptionEn": "I promote the platform and share direct links to try it firsthand.",
+      "layout": "grid",
+      "links": [
+        {
+          "label": "DZINE AI",
+          "labelEn": "DZINE AI",
+          "url": "https://www.dzine.ai/?via=axel0689",
+          "icon": "fa-solid fa-wand-magic-sparkles",
+          "logo": "images/logos/dzine.png",
+          "brand": "dzine"
+        },
+        {
+          "label": "ImagineArt",
+          "labelEn": "ImagineArt",
+          "url": "https://imagineartinc.pxf.io/axel0689",
+          "icon": "fa-solid fa-paintbrush",
+          "logo": "images/logos/imagineart.png",
+          "brand": "imagineart"
+        },
+        {
+          "label": "Refabric AI",
+          "labelEn": "Refabric AI",
+          "url": "https://www.refabric.com/",
+          "icon": "fa-solid fa-shirt",
+          "logo": "images/logos/refabric.png",
+          "brand": "refabric"
+        }
+      ]
+    },
+    {
+      "accent": "pink",
+      "icon": "fa-solid fa-circle-nodes",
+      "title": "Creator Partner & Affiliati",
+      "titleEn": "Creator Partner & Affiliates",
+      "description": "Collaboro con piattaforme e prodotti AI, offrendo accesso tramite link affiliati per testarli.",
+      "descriptionEn": "I collaborate with AI platforms and products, providing access through affiliate links to test them.",
+      "layout": "grid",
+      "links": [
+        {
+          "label": "Pollo AI",
+          "labelEn": "Pollo AI",
+          "url": "https://pollo.ai?ref=mdcymjn",
+          "icon": "fa-solid fa-video",
+          "logo": "images/logos/pollo.png",
+          "brand": "pollo"
+        },
+        {
+          "label": "ElevenLabs",
+          "labelEn": "ElevenLabs",
+          "url": "https://try.elevenlabs.io/axel0689",
+          "icon": "fa-solid fa-microphone",
+          "logo": "images/logos/elevenlabs.png",
+          "brand": "elevenlabs"
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "brand": "Alessandro Bagnuoli",
+    "year": "2026"
+  },
+  "background": {
+    "preset": "midnight-blue"
+  }
+}
+    </script>
+    
+    <script>
+        // shared.js espone: LP.esc, LP.isExternal, LP.applyBackground, LP.normalizeSiteData
+        // iconResolver.js espone: LP.renderIconHtml
+        let lang = 'it';
+        let _siteData = null;
+
+        // Returns the translated value for `field` on `obj`, falling back to the base field.
+        function getT(obj, field) {
+            if (lang === 'en') {
+                const v = obj[field + 'En'];
+                if (v !== undefined && v !== '') return v;
+            }
+            return obj[field] ?? '';
+        }
+
+        function setLang(newLang) {
+            lang = newLang;
+            document.getElementById('html-root').lang = newLang;
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            if (_siteData) renderSite(_siteData);
+        }
+
+        function renderLink(link) {
+            const brandAttr = link.brand ? ` data-brand="${LP.esc(link.brand)}"` : '';
+            const targetAttr = LP.isExternal(link.url) ? ' target="_blank" rel="noopener"' : '';
+            return `<a href="${LP.esc(link.url)}" class="link"${brandAttr}${targetAttr}>` +
+                   `<span class="link-content">${LP.renderIconHtml(link)} ${LP.esc(getT(link, 'label'))}</span>` +
+                   `<i class="fa-solid fa-arrow-right link-arrow"></i></a>`;
+        }
+
+        function renderSection(sec) {
+            const layoutClass = sec.layout === 'grid' ? 'links-grid' : 'links';
+            const descText = getT(sec, 'description');
+            const desc = descText ? `<p>${LP.esc(descText)}</p>` : '';
+            return `<div class="section" data-accent="${LP.esc(sec.accent)}">` +
+                   `<h2><i class="${LP.esc(sec.icon)}"></i> ${LP.esc(getT(sec, 'title'))}</h2>` +
+                   desc +
+                   `<div class="${layoutClass}">${sec.links.map(renderLink).join('')}</div>` +
+                   `</div>`;
+        }
+
+        function renderSite(data) {
+            LP._iconUid = 0;
+            const p = data.profile;
+
+            const socialHtml = p.social.map(s =>
+                `<a href="${LP.esc(s.url)}"${LP.isExternal(s.url) ? ' target="_blank" rel="noopener"' : ''} aria-label="${LP.esc(getT(s, 'label'))}">` +
+                `<i class="${LP.esc(s.icon)}"></i></a>`
+            ).join('');
+
+            const ps = p.photoStyle || {};
+            const avatarClass = [
+                'profile-avatar',
+                'avatar-size-'  + (ps.size     || 'medium'),
+                'avatar-shape-' + (ps.shape    || 'circle'),
+                'avatar-ring-'  + (ps.ring     || 'animated'),
+                'avatar-pos-'   + (ps.position || 'top')
+            ].join(' ');
+
+            document.getElementById('main-container').innerHTML =
+                `<header>` +
+                `<div class="${avatarClass}"><div class="avatar-ring"></div><div class="avatar-bg"></div>` +
+                `<div class="avatar-inner"><img src="${LP.esc(p.photo)}" alt="${LP.esc(p.name)}"></div></div>` +
+                `<h1>${LP.esc(p.name)}</h1>` +
+                `<p class="subtitle">${LP.esc(getT(p, 'subtitle'))}</p>` +
+                `<p class="tagline">${LP.esc(getT(p, 'tagline'))}</p>` +
+                `<div class="social-icons">${socialHtml}</div>` +
+                `</header>` +
+                data.sections.map(renderSection).join('');
+
+            const f = data.footer;
+            document.getElementById('main-footer').innerHTML =
+                `<div class="footer-separator"></div>` +
+                `<p class="footer-brand">${LP.esc(f.brand)}</p>` +
+                `<p class="footer-copy">&copy; ${LP.esc(f.year)} All rights reserved.</p>` +
+                `<p class="footer-tagline">Built with HTML, CSS, and JavaScript.</p>`;
+
+            // Scroll-triggered entrance animations
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = `${i * 0.08}s`;
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+
+            document.querySelectorAll('.section').forEach(el => observer.observe(el));
+        }
+
+        // ===== BOOT =====
+        document.addEventListener('DOMContentLoaded', () => {
+            _siteData = JSON.parse(document.getElementById('__SITE_DATA__').textContent);
+            LP.normalizeSiteData(_siteData);
+            LP.applyBackground(_siteData);
+            renderSite(_siteData);
+            document.getElementById('btn-it').addEventListener('click', () => setLang('it'));
+            document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+        });
+    </script>
+</body>
+</html>
