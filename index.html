@@ -328,10 +328,14 @@
                 `<div class="avatar-inner"><img src="${LP.esc(p.photo)}" alt="${LP.esc(p.name)}"></div></div>` +
                 `<h1>${LP.esc(p.name)}</h1>` +
                 `<p class="subtitle">${LP.esc(getT(p, 'subtitle'))}</p>` +
-                `<p class="tagline">${LP.esc(getT(p, 'tagline'))}</p>` +
+                `<p class="tagline"></p>` +
                 `<div class="social-icons">${socialHtml}</div>` +
                 `</header>` +
                 data.sections.map(renderSection).join('');
+
+            // Start typewriter on tagline after DOM is updated
+            const taglineEl = document.querySelector('.tagline');
+            if (taglineEl) typewrite(taglineEl, getT(p, 'tagline'));
 
             const f = data.footer;
             document.getElementById('main-footer').innerHTML =
@@ -353,6 +357,38 @@
 
             document.querySelectorAll('.section').forEach(el => observer.observe(el));
         }
+
+        // ===== TYPEWRITER =====
+        let _twTimer = null;
+        function typewrite(el, text) {
+            if (_twTimer) clearInterval(_twTimer);
+            el.textContent = '';
+            el.style.opacity = '1';
+            const cursor = document.createElement('span');
+            cursor.className = 'tw-cursor';
+            el.appendChild(cursor);
+            let i = 0;
+            _twTimer = setInterval(() => {
+                if (i < text.length) {
+                    cursor.insertAdjacentText('beforebegin', text[i++]);
+                } else {
+                    clearInterval(_twTimer);
+                    setTimeout(() => { if (cursor.parentNode) cursor.remove(); }, 1800);
+                }
+            }, 38);
+        }
+
+        // ===== RIPPLE =====
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('.link');
+            if (!link) return;
+            const rect = link.getBoundingClientRect();
+            const r = document.createElement('span');
+            r.className = 'ripple';
+            r.style.cssText = `left:${e.clientX - rect.left}px;top:${e.clientY - rect.top}px`;
+            link.appendChild(r);
+            r.addEventListener('animationend', () => r.remove(), { once: true });
+        });
 
         // ===== BOOT =====
         document.addEventListener('DOMContentLoaded', () => {
