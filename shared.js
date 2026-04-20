@@ -86,12 +86,18 @@ LP.ACCENT_COLORS = {
 // Garantisce che ogni link abbia tutti i campi opzionali (icon, logo, brand)
 LP.normalizeLink = function(link) {
     return {
-        label:   link.label   || '',
-        labelEn: link.labelEn || '',
-        url:     link.url     || '',
-        icon:    link.icon    || '',
-        logo:    link.logo    || '',
-        brand:   link.brand   || ''
+        label:         link.label         || '',
+        labelEn:       link.labelEn       || '',
+        title:         link.title         || '',
+        titleEn:       link.titleEn       || '',
+        description:   link.description   || '',
+        descriptionEn: link.descriptionEn || '',
+        url:           link.url           || '',
+        icon:          link.icon          || '',
+        logo:          link.logo          || '',
+        logoPosition:  link.logoPosition  || '',
+        logoSize:      link.logoSize      || '',
+        brand:         link.brand         || ''
     };
 };
 
