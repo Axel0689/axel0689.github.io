@@ -96,11 +96,19 @@ body::before {
 /* ===== HEADER ===== */
 header { text-align: center; padding: 60px 0 48px; }
 
+.identity-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
 .profile-avatar {
     position: relative;
-    width: 128px;
-    height: 128px;
-    margin: 0 auto 28px;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
     animation: fadeInUp 0.7s cubic-bezier(0.25,0.8,0.25,1) forwards;
     opacity: 0;
 }
@@ -117,10 +125,38 @@ header { text-align: center; padding: 60px 0 48px; }
 
 @keyframes ringRotate { 100% { transform: rotate(360deg); } }
 
+.logo-video-frame {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    height: 300px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    padding: 3px;
+    background: conic-gradient(from 0deg, var(--accent-primary), var(--accent-secondary), var(--accent-warm), var(--accent-pink), var(--accent-primary));
+    background-size: 200% 200%;
+    animation: fadeInUp 0.7s cubic-bezier(0.25,0.8,0.25,1) forwards,
+               logoBorderSpin 6s linear infinite;
+    animation-delay: 0.1s, 0.1s;
+    opacity: 0;
+    box-shadow: 0 0 40px rgba(108,99,255,0.35), 0 0 80px rgba(78,205,196,0.15);
+}
+@keyframes logoBorderSpin {
+    100% { background-position: 200% 200%; }
+}
+.logo-animation {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    background: #0c0c1c;
+}
+
 /* ===== AVATAR — dimensioni ===== */
-.avatar-size-small { width: 96px;  height: 96px; }
-/* medium = default 128px già in .profile-avatar */
-.avatar-size-large { width: 160px; height: 160px; }
+.avatar-size-small { width: 56px;  height: 56px; }
+/* medium = default 72px già in .profile-avatar */
+.avatar-size-large { width: 88px; height: 88px; }
 
 /* ===== AVATAR — forma ===== */
 /* circle = default 50% */
@@ -471,7 +507,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 48px 20px 
     h1 { font-size: 2em; }
     .container { padding: 12px 12px 0; }
     .section { padding: 28px 24px; }
-    .profile-avatar { width: 108px; height: 108px; }
+    .profile-avatar { width: 64px; height: 64px; }
     .links-grid { grid-template-columns: 1fr; }
     .social-icons a { width: 42px; height: 42px; }
     .lang-toggle { top: 12px; right: 12px; }
