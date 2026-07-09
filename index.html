@@ -435,9 +435,14 @@
 
             document.getElementById('main-container').innerHTML =
                 `<header>` +
+                `<div class="logo-video-frame">` +
+                `<video class="logo-animation" src="images/logo_animation.mp4" autoplay loop muted playsinline aria-hidden="true"></video>` +
+                `</div>` +
+                `<div class="identity-row">` +
                 `<div class="${avatarClass}"><div class="avatar-ring"></div><div class="avatar-bg"></div>` +
                 `<div class="avatar-inner"><img src="${LP.esc(p.photo)}" alt="${LP.esc(p.name)}"></div></div>` +
                 `<h1>${LP.esc(p.name)}</h1>` +
+                `</div>` +
                 `<p class="subtitle">${LP.esc(getT(p, 'subtitle'))}</p>` +
                 `<p class="tagline"></p>` +
                 `<div class="social-icons">${socialHtml}</div>` +
