@@ -93,7 +93,20 @@
       "shape": "rounded",
       "ring": "animated",
       "position": "top"
-    }
+    },
+    "marquee": {
+      "enabled": true,
+      "text": "Full Stack AI Engineer  •  Generative AI  •  Automazione  •  Prompt Engineering  •  Disponibile per nuovi progetti  •",
+      "textEn": "Full Stack AI Engineer  •  Generative AI  •  Automation  •  Prompt Engineering  •  Available for new projects  •"
+    },
+    "techStack": [
+      { "icon": "fa-brands fa-python" },
+      { "icon": "fa-solid fa-robot" },
+      { "icon": "fa-brands fa-js" },
+      { "icon": "fa-solid fa-database" },
+      { "icon": "fa-brands fa-github" },
+      { "icon": "fa-solid fa-wand-magic-sparkles" }
+    ]
   },
   "sections": [
     {
@@ -245,7 +258,7 @@
       "titleEn": "Ambassador Role",
       "description": "Promuovo la piattaforma e condivido link diretti per provarla in prima persona.",
       "descriptionEn": "I promote the platform and share direct links to try it firsthand.",
-      "layout": "grid",
+      "layout": "bento",
       "links": [
         {
           "label": "",
@@ -405,7 +418,9 @@
         }
 
         function renderSection(sec) {
-            const layoutClass = sec.layout === 'grid' ? 'links-grid' : 'links';
+            const layoutClass = sec.layout === 'grid' ? 'links-grid'
+                               : sec.layout === 'bento' ? 'links-bento'
+                               : 'links';
             const descText = getT(sec, 'description');
             const desc = descText ? `<p>${LP.esc(descText)}</p>` : '';
             return `<div class="section" data-accent="${LP.esc(sec.accent)}">` +
@@ -413,6 +428,26 @@
                    desc +
                    `<div class="${layoutClass}">${sec.links.map(renderLink).join('')}</div>` +
                    `</div>`;
+        }
+
+        function renderTechStack(items) {
+            if (!items || !items.length) return '';
+            const MAX = 4;
+            const shown = items.slice(0, MAX);
+            const extra = items.length - shown.length;
+            const avatars = shown.map(t =>
+                `<span class="avatar-chip"><i class="${LP.esc(t.icon)}"></i></span>`
+            ).join('');
+            const more = extra > 0 ? `<span class="avatar-chip avatar-chip-more">+${extra}</span>` : '';
+            return `<div class="tech-stack-group" aria-hidden="true">${avatars}${more}</div>`;
+        }
+
+        function renderMarquee(m) {
+            if (!m || !m.enabled) return '';
+            const text = LP.esc(getT(m, 'text'));
+            return `<div class="marquee" aria-hidden="true"><div class="marquee-track">` +
+                   `<span>${text}</span><span>${text}</span>` +
+                   `</div></div>`;
         }
 
         function renderSite(data) {
@@ -445,13 +480,15 @@
                 `</div>` +
                 `<p class="subtitle">${LP.esc(getT(p, 'subtitle'))}</p>` +
                 `<p class="tagline"></p>` +
+                renderTechStack(p.techStack) +
                 `<div class="social-icons">${socialHtml}</div>` +
                 `</header>` +
+                renderMarquee(p.marquee) +
                 data.sections.map(renderSection).join('');
 
-            // Start typewriter on tagline after DOM is updated
+            // Start scramble-decode effect on tagline after DOM is updated
             const taglineEl = document.querySelector('.tagline');
-            if (taglineEl) typewrite(taglineEl, getT(p, 'tagline'));
+            if (taglineEl) scrambleText(taglineEl, getT(p, 'tagline'));
 
             const f = data.footer;
             document.getElementById('main-footer').innerHTML =
@@ -474,24 +511,34 @@
             document.querySelectorAll('.section').forEach(el => observer.observe(el));
         }
 
-        // ===== TYPEWRITER =====
-        let _twTimer = null;
-        function typewrite(el, text) {
-            if (_twTimer) clearInterval(_twTimer);
-            el.textContent = '';
+        // ===== TEXT SCRAMBLE (DECODE EFFECT) =====
+        const SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#________';
+        let _scrambleTimer = null;
+        function scrambleText(el, text) {
+            if (_scrambleTimer) clearInterval(_scrambleTimer);
             el.style.opacity = '1';
-            const cursor = document.createElement('span');
-            cursor.className = 'tw-cursor';
-            el.appendChild(cursor);
-            let i = 0;
-            _twTimer = setInterval(() => {
-                if (i < text.length) {
-                    cursor.insertAdjacentText('beforebegin', text[i++]);
-                } else {
-                    clearInterval(_twTimer);
-                    setTimeout(() => { if (cursor.parentNode) cursor.remove(); }, 1800);
+            const len = text.length;
+            const revealAt = Array.from({ length: len }, (_, i) => i + Math.random() * 8);
+            const maxRevealAt = Math.max(0, ...revealAt);
+            let frame = 0;
+            _scrambleTimer = setInterval(() => {
+                let out = '';
+                let done = true;
+                for (let i = 0; i < len; i++) {
+                    if (frame >= revealAt[i]) {
+                        out += text[i];
+                    } else {
+                        done = false;
+                        out += text[i] === ' ' ? ' ' : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+                    }
                 }
-            }, 38);
+                el.textContent = out;
+                frame++;
+                if (done || frame > maxRevealAt + 2) {
+                    clearInterval(_scrambleTimer);
+                    el.textContent = text;
+                }
+            }, 32);
         }
 
         // ===== RIPPLE =====

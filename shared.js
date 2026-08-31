@@ -115,6 +115,13 @@ LP.normalizeSiteData = function(data) {
             ring:     ps.ring     || 'animated',
             position: ps.position || 'top'
         };
+        var mq = data.profile.marquee || {};
+        data.profile.marquee = {
+            enabled: mq.enabled || false,
+            text:    mq.text    || '',
+            textEn:  mq.textEn  || ''
+        };
+        data.profile.techStack = data.profile.techStack || [];
     }
     return data;
 };
