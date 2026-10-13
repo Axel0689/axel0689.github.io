@@ -21,10 +21,10 @@ LP.isExternal = function(url) {
 LP.BG_PRESETS = [
     {
         id: 'dark-purple',
-        label: 'Dark Purple',
-        body: 'linear-gradient(135deg,#0a0a0f 0%,#11112a 40%,#18183e 70%,#0e1628 100%)',
-        swatchFrom: '#11112a', swatchTo: '#18183e',
-        g1: 'rgba(108,99,255,0.08)', g2: 'rgba(78,205,196,0.06)', g3: 'rgba(247,151,30,0.05)'
+        label: 'AB Dark',
+        body: '#07080b',
+        swatchFrom: '#07080b', swatchTo: '#12141b',
+        g1: 'rgba(44,200,242,0.10)', g2: 'rgba(255,61,154,0.08)', g3: 'rgba(255,176,32,0.05)'
     },
     {
         id: 'midnight-blue',
@@ -78,8 +78,8 @@ LP.applyBackground = function(data) {
 
 // ===== ACCENT COLORS =====
 LP.ACCENT_COLORS = {
-    purple: '#6c63ff', teal: '#4ecdc4', blue: '#45b7d1',
-    amber: '#f7971e', pink: '#ff6b9d', green: '#2ecc71', red: '#e74c3c'
+    purple: '#2cc8f2', teal: '#4ecdc4', blue: '#45b7d1',
+    amber: '#ffb020', pink: '#ff3d9a', green: '#2ecc71', red: '#e74c3c'
 };
 
 // ===== DATA MODEL NORMALIZATION =====

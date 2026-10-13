@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandro Bagnuoli | Axel0689</title>
+    <link rel="icon" type="image/png" href="images/logo_AB.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style id="bg-dynamic"></style>
+    <script src="shared.js"></script>
+    <script src="iconResolver.js"></script>
+</head>
+<body>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="btn-it" class="active">IT</button>
+        <button id="btn-en">EN</button>
+    </div>
+
+    <a class="home-link" href="index.html" aria-label="Home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> <span id="home-label">Home</span></a>
+
+    <div class="container" id="main-container"></div>
+    <footer id="main-footer"></footer>
+
+    <!-- =====================================================
+         SITE DATA — modifica da editor.html oppure qui
+         ===================================================== -->
+    <script id="__SITE_DATA__" type="application/json">
+{
+  "profile": {
+    "name": "Alessandro Bagnuoli",
+    "subtitle": "Full Stack AI Engineer & Generative AI Content Specialist",
+    "subtitleEn": "Full Stack AI Engineer & Generative AI Content Specialist",
+    "tagline": "Trasformo idee in sistemi AI funzionanti",
+    "taglineEn": "Turning ideas into real AI systems",
+    "photo": "images/profilo.jpg",
+    "social": [
+      {
+        "icon": "fa-brands fa-linkedin",
+        "label": "LinkedIn",
+        "labelEn": "LinkedIn",
+        "url": "https://www.linkedin.com/in/alessandrobagnuoli89/"
+      },
+      {
+        "icon": "fa-solid fa-link",
+        "label": "My website",
+        "labelEn": "My website",
+        "url": "https://www.alessandrobagnuoli.me/"
+      },
+      {
+        "icon": "fa-brands fa-x-twitter",
+        "label": "X",
+        "labelEn": "X",
+        "url": "https://x.com/alex_bagnuoli89"
+      },
+      {
+        "icon": "fa-solid fa-envelope",
+        "label": "Email",
+        "labelEn": "Email",
+        "url": "mailto:bagnuoli.alex@ik.me"
+      },
+      {
+        "icon": "fa-brands fa-github",
+        "label": "GitHub",
+        "labelEn": "GitHub",
+        "url": "https://github.com/Axel0689"
+      },
+      {
+        "icon": "fa-brands fa-facebook",
+        "label": "Facebook",
+        "labelEn": "Facebook",
+        "url": "https://www.facebook.com/alexbagnuoli89"
+      },
+      {
+        "icon": "fa-brands fa-instagram",
+        "label": "Instagram",
+        "labelEn": "Instagram",
+        "url": "https://www.instagram.com/alexbagnuoli/"
+      },
+      {
+        "icon": "fa-brands fa-reddit",
+        "label": "Reddit",
+        "labelEn": "Reddit",
+        "url": "https://www.reddit.com/user/Axel0689/"
+      }
+    ],
+    "photoStyle": {
+      "size": "large",
+      "shape": "rounded",
+      "ring": "animated",
+      "position": "top"
+    },
+    "marquee": {
+      "enabled": true,
+      "text": "Full Stack AI Engineer  •  Generative AI  •  Automazione  •  Prompt Engineering  •  Disponibile per nuovi progetti  •",
+      "textEn": "Full Stack AI Engineer  •  Generative AI  •  Automation  •  Prompt Engineering  •  Available for new projects  •"
+    },
+    "techStack": [
+      { "icon": "fa-brands fa-python" },
+      { "icon": "fa-solid fa-robot" },
+      { "icon": "fa-brands fa-js" },
+      { "icon": "fa-solid fa-database" },
+      { "icon": "fa-brands fa-github" },
+      { "icon": "fa-solid fa-wand-magic-sparkles" }
+    ]
+  },
+  "sections": [
+    {
+      "accent": "blue",
+      "icon": "fa-solid fa-folder-open",
+      "title": "Progetti AI Selezionati",
+      "titleEn": "Selected AI Projects",
+      "description": "I miei progetti AI più innovativi.",
+      "descriptionEn": "My most innovative AI projects.",
+      "layout": "list",
+      "links": [
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "DocDigest AI",
+          "titleEn": "DocDigest AI",
+          "description": "Riassunti intelligenti basati sull'intelligenza artificiale",
+          "descriptionEn": "Smart summaries based on artificial intelligence",
+          "url": "https://docdigest-zeta.vercel.app",
+          "icon": "fa-solid",
+          "logo": "images/logos/docdigest.png",
+          "logoPosition": "",
+          "logoSize": "lg",
+          "brand": "docdigest"
+        },
+        {
+          "label": "",
+          "labelEn": "MeetingSense: An assistant that transforms business call transcripts into structured minutes with decisions, action items, and risks, ready to be shared.",
+          "title": "MeetingSense",
+          "titleEn": "MeetingSense",
+          "description": "È un assistente che trasforma le trascrizioni di call aziendali in verbali strutturati con decisioni, action item e rischi, pronti per essere condivisi.",
+          "descriptionEn": "A comprehensive web application for task management, developed using Django and MySQL",
+          "url": "https://meeting-sense-gray.vercel.app/",
+          "icon": "fa-solid",
+          "logo": "images/logos/meeting-sense.png",
+          "logoPosition": "",
+          "logoSize": "lg",
+          "brand": "meeting-sense"
+        },
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "File Renamer v0.3",
+          "titleEn": "File Renamer v0.3",
+          "description": "App desktop per rinominare file in modo personalizzato con estensione automatica.",
+          "descriptionEn": "A desktop app for renaming files in a customised way with automatic extension.",
+          "url": "https://github.com/Axel0689/file_renamer",
+          "icon": "fa-solid",
+          "logo": "images/logos/filerenamer.png",
+          "logoPosition": "",
+          "logoSize": "lg",
+          "brand": "filerenamer"
+        }
+      ]
+    },
+    {
+      "accent": "green",
+      "icon": "fa-solid fa-lightbulb",
+      "title": "Parliamo del tuo progetto",
+      "titleEn": "Let’s talk about your project",
+      "description": "Raccontami cosa hai in mente, ti rispondo con una proposta chiara e senza impegno",
+      "descriptionEn": "Tell me what you have in mind, and I’ll get back to you with a clear, no-obligation proposal",
+      "layout": "list",
+      "links": [
+        {
+          "label": "Contattami",
+          "labelEn": "Contact Me",
+          "title": "",
+          "titleEn": "",
+          "description": "",
+          "descriptionEn": "",
+          "url": "https://tally.so/r/mZAEMz",
+          "icon": "fa-solid fa-comment",
+          "logo": "",
+          "logoPosition": "",
+          "logoSize": "",
+          "brand": ""
+        },
+        {
+          "label": "Richiedi un Preventivo",
+          "labelEn": "Request a Quote",
+          "title": "",
+          "titleEn": "",
+          "description": "",
+          "descriptionEn": "",
+          "url": "https://tally.so/r/wLo9kp",
+          "icon": "fa-solid fa-file-invoice",
+          "logo": "",
+          "logoPosition": "",
+          "logoSize": "",
+          "brand": ""
+        }
+      ]
+    },
+    {
+      "accent": "green",
+      "icon": "fa-brands fa-github",
+      "title": "Esperimenti AI & Strumenti",
+      "titleEn": "AI Experiments & Tools",
+      "description": "Sviluppo e condivido progetti, test e tool AI. Tutto documentato sul mio GitHub.",
+      "descriptionEn": "I build and share AI projects, experiments, and tools. Everything is documented on my GitHub.",
+      "layout": "list",
+      "links": [
+        {
+          "label": "Github Profilo",
+          "labelEn": "GitHub Profile",
+          "title": "",
+          "titleEn": "",
+          "description": "",
+          "descriptionEn": "",
+          "url": "https://github.com/Axel0689",
+          "icon": "fa-solid fa-code-branch",
+          "logo": "",
+          "logoPosition": "",
+          "logoSize": "",
+          "brand": ""
+        }
+      ]
+    },
+    {
+      "accent": "red",
+      "icon": "fa-brands fa-youtube",
+      "title": "Contenuti & AI Creativa",
+      "titleEn": "Content & Creative AI",
+      "description": "Creo contenuti su AI e creatività, tra tutorial, showcase e sperimentazioni sul mio canale YouTube.",
+      "descriptionEn": "I create content about AI and creativity, including tutorials, showcases, and experiments on my YouTube channel.",
+      "layout": "list",
+      "links": [
+        {
+          "label": "Canale YouTube",
+          "labelEn": "YouTube Channel",
+          "title": "",
+          "titleEn": "",
+          "description": "",
+          "descriptionEn": "",
+          "url": "https://youtube.com/@axel0689",
+          "icon": "fa-solid fa-play",
+          "logo": "",
+          "logoPosition": "",
+          "logoSize": "",
+          "brand": ""
+        }
+      ]
+    },
+    {
+      "accent": "amber",
+      "icon": "fa-solid fa-crown",
+      "title": "Ruolo Ambassador",
+      "titleEn": "Ambassador Role",
+      "description": "Promuovo la piattaforma e condivido link diretti per provarla in prima persona.",
+      "descriptionEn": "I promote the platform and share direct links to try it firsthand.",
+      "layout": "bento",
+      "links": [
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "DZINE AI",
+          "titleEn": "DZINE AI",
+          "description": "Dall'idea al design, in un istante.",
+          "descriptionEn": "From idea to design, in an instant.",
+          "url": "https://www.dzine.ai/?via=axel0689",
+          "icon": "fa-solid fa-wand-magic-sparkles",
+          "logo": "images/logos/dzine.png",
+          "logoPosition": "",
+          "logoSize": "lg",
+          "brand": "dzine"
+        },
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "ImagineArt",
+          "titleEn": "ImagineArt",
+          "description": "Libera l'arte che hai in mente.",
+          "descriptionEn": "Unleash the art within you.",
+          "url": "https://imagineartinc.pxf.io/axel0689",
+          "icon": "fa-solid fa-paintbrush",
+          "logo": "images/logos/imagineart.png",
+          "logoPosition": "",
+          "logoSize": "lg",
+          "brand": "imagineart"
+        },
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "Refabric AI",
+          "titleEn": "Refabric AI",
+          "description": "Reinventa la moda con l'IA.",
+          "descriptionEn": "Reinvent fashion with AI.",
+          "url": "https://www.refabric.com/",
+          "icon": "fa-solid fa-shirt",
+          "logo": "images/logos/refabric.png",
+          "logoPosition": "",
+          "logoSize": "lg",
+          "brand": "refabric"
+        }
+      ]
+    },
+    {
+      "accent": "pink",
+      "icon": "fa-solid fa-circle-nodes",
+      "title": "Creator Partner & Affiliati",
+      "titleEn": "Creator Partner & Affiliates",
+      "description": "Collaboro con piattaforme e prodotti AI, offrendo accesso tramite link affiliati per testarli.",
+      "descriptionEn": "I collaborate with AI platforms and products, providing access through affiliate links to test them.",
+      "layout": "grid",
+      "links": [
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "PolloAI",
+          "titleEn": "PolloAI",
+          "description": "Trasforma le tue idee in video straordinari.",
+          "descriptionEn": "Turn your ideas into amazing videos.",
+          "url": "https://pollo.ai?ref=mdcymjn",
+          "icon": "fa-solid fa-video",
+          "logo": "images/logos/pollo.png",
+          "logoPosition": "",
+          "logoSize": "md",
+          "brand": "pollo"
+        },
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "ElevenLabs",
+          "titleEn": "ElevenLabs",
+          "description": "La tua voce, senza confini.",
+          "descriptionEn": "Your voice, without limits.",
+          "url": "https://try.elevenlabs.io/axel0689",
+          "icon": "fa-solid fa-microphone",
+          "logo": "images/logos/elevenlabs.png",
+          "logoPosition": "",
+          "logoSize": "md",
+          "brand": "elevenlabs"
+        },
+        {
+          "label": "",
+          "labelEn": "",
+          "title": "OpenArt",
+          "titleEn": "OpenArt",
+          "description": "Dai forma all’immaginazione con l’AI",
+          "descriptionEn": "Turn imagination into art with AI",
+          "url": "https://tolt.link/axel0689",
+          "icon": "fa-solid fa-video",
+          "logo": "images/logos/openart_logo2.png",
+          "logoPosition": "",
+          "logoSize": "md",
+          "brand": "openart"
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "brand": "Alessandro Bagnuoli",
+    "year": "2026"
+  },
+  "background": {
+    "preset": "dark-purple"
+  }
+}
+    </script>
+    
+    <script>
+        // shared.js espone: LP.esc, LP.isExternal, LP.applyBackground, LP.normalizeSiteData
+        // iconResolver.js espone: LP.renderIconHtml
+        let lang = 'it';
+        let _siteData = null;
+
+        // Returns the translated value for `field` on `obj`, falling back to the base field.
+        function getT(obj, field) {
+            if (lang === 'en') {
+                const v = obj[field + 'En'];
+                if (v !== undefined && v !== '') return v;
+            }
+            return obj[field] ?? '';
+        }
+
+        function setLang(newLang) {
+            lang = newLang;
+            document.getElementById('html-root').lang = newLang;
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            if (_siteData) renderSite(_siteData);
+        }
+
+        function renderLink(link) {
+            const brandAttr   = link.brand        ? ` data-brand="${LP.esc(link.brand)}"` : '';
+            const posAttr     = link.logoPosition  ? ` data-logo-pos="${LP.esc(link.logoPosition)}"` : '';
+            const sizeAttr    = link.logoSize      ? ` data-logo-size="${LP.esc(link.logoSize)}"` : '';
+            const targetAttr  = LP.isExternal(link.url) ? ' target="_blank" rel="noopener"' : '';
+            const title = getT(link, 'title');
+            const desc  = getT(link, 'description');
+            let textHtml;
+            if (title) {
+                textHtml = `<span class="link-text"><span class="link-title">${LP.esc(title)}</span>` +
+                           (desc ? `<span class="link-desc">${LP.esc(desc)}</span>` : '') + `</span>`;
+            } else {
+                textHtml = LP.esc(getT(link, 'label'));
+            }
+            const base = `<a href="${LP.esc(link.url)}" class="link"${brandAttr}${posAttr}${sizeAttr}${targetAttr}>`;
+            if (link.logoPosition === 'top' && link.logo) {
+                return base +
+                       `<span class="link-logo-header">${LP.renderIconHtml(link)}</span>` +
+                       `<span class="link-body"><span class="link-content">${textHtml}</span>` +
+                       `<i class="fa-solid fa-arrow-right link-arrow"></i></span></a>`;
+            }
+            return base +
+                   `<span class="link-content">${LP.renderIconHtml(link)} ${textHtml}</span>` +
+                   `<i class="fa-solid fa-arrow-right link-arrow"></i></a>`;
+        }
+
+        function renderSection(sec) {
+            const layoutClass = sec.layout === 'grid' ? 'links-grid'
+                               : sec.layout === 'bento' ? 'links-bento'
+                               : 'links';
+            const descText = getT(sec, 'description');
+            const desc = descText ? `<p>${LP.esc(descText)}</p>` : '';
+            return `<div class="section" data-accent="${LP.esc(sec.accent)}">` +
+                   `<h2><i class="${LP.esc(sec.icon)}"></i> ${LP.esc(getT(sec, 'title'))}</h2>` +
+                   desc +
+                   `<div class="${layoutClass}">${sec.links.map(renderLink).join('')}</div>` +
+                   `</div>`;
+        }
+
+        function renderTechStack(items) {
+            if (!items || !items.length) return '';
+            const MAX = 4;
+            const shown = items.slice(0, MAX);
+            const extra = items.length - shown.length;
+            const avatars = shown.map(t =>
+                `<span class="avatar-chip"><i class="${LP.esc(t.icon)}"></i></span>`
+            ).join('');
+            const more = extra > 0 ? `<span class="avatar-chip avatar-chip-more">+${extra}</span>` : '';
+            return `<div class="tech-stack-group" aria-hidden="true">${avatars}${more}</div>`;
+        }
+
+        function renderMarquee(m) {
+            if (!m || !m.enabled) return '';
+            const text = LP.esc(getT(m, 'text'));
+            return `<div class="marquee" aria-hidden="true"><div class="marquee-track">` +
+                   `<span>${text}</span><span>${text}</span>` +
+                   `</div></div>`;
+        }
+
+        function renderSite(data) {
+            LP._iconUid = 0;
+            const p = data.profile;
+
+            const socialHtml = p.social.map(s =>
+                `<a href="${LP.esc(s.url)}"${LP.isExternal(s.url) ? ' target="_blank" rel="noopener"' : ''} aria-label="${LP.esc(getT(s, 'label'))}">` +
+                `<i class="${LP.esc(s.icon)}"></i></a>`
+            ).join('');
+
+            const ps = p.photoStyle || {};
+            const avatarClass = [
+                'profile-avatar',
+                'avatar-size-'  + (ps.size     || 'medium'),
+                'avatar-shape-' + (ps.shape    || 'circle'),
+                'avatar-ring-'  + (ps.ring     || 'animated'),
+                'avatar-pos-'   + (ps.position || 'top')
+            ].join(' ');
+
+            document.getElementById('main-container').innerHTML =
+                `<header>` +
+                `<div class="logo-video-frame">` +
+                `<video class="logo-animation" src="images/logo_animation.mp4" autoplay loop muted playsinline aria-hidden="true"></video>` +
+                `</div>` +
+                `<div class="identity-row">` +
+                `<div class="${avatarClass}"><div class="avatar-ring"></div><div class="avatar-bg"></div>` +
+                `<div class="avatar-inner"><img src="${LP.esc(p.photo)}" alt="${LP.esc(p.name)}"></div></div>` +
+                `<h1>${LP.esc(p.name)}</h1>` +
+                `</div>` +
+                `<p class="subtitle">${LP.esc(getT(p, 'subtitle'))}</p>` +
+                `<p class="tagline"></p>` +
+                renderTechStack(p.techStack) +
+                `<div class="social-icons">${socialHtml}</div>` +
+                `</header>` +
+                renderMarquee(p.marquee) +
+                data.sections.map(renderSection).join('');
+
+            // Start scramble-decode effect on tagline after DOM is updated
+            const taglineEl = document.querySelector('.tagline');
+            if (taglineEl) scrambleText(taglineEl, getT(p, 'tagline'));
+
+            const f = data.footer;
+            document.getElementById('main-footer').innerHTML =
+                `<div class="footer-separator"></div>` +
+                `<p class="footer-brand">${LP.esc(f.brand)}</p>` +
+                `<p class="footer-copy">&copy; ${LP.esc(f.year)} All rights reserved.</p>` +
+                `<p class="footer-tagline">Built with HTML, CSS, and JavaScript.</p>`;
+
+            // Scroll-triggered entrance animations
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = `${i * 0.08}s`;
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+
+            document.querySelectorAll('.section').forEach(el => observer.observe(el));
+        }
+
+        // ===== TEXT SCRAMBLE (DECODE EFFECT) =====
+        const SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#________';
+        let _scrambleTimer = null;
+        function scrambleText(el, text) {
+            if (_scrambleTimer) clearInterval(_scrambleTimer);
+            el.style.opacity = '1';
+            const len = text.length;
+            const revealAt = Array.from({ length: len }, (_, i) => i + Math.random() * 8);
+            const maxRevealAt = Math.max(0, ...revealAt);
+            let frame = 0;
+            _scrambleTimer = setInterval(() => {
+                let out = '';
+                let done = true;
+                for (let i = 0; i < len; i++) {
+                    if (frame >= revealAt[i]) {
+                        out += text[i];
+                    } else {
+                        done = false;
+                        out += text[i] === ' ' ? ' ' : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+                    }
+                }
+                el.textContent = out;
+                frame++;
+                if (done || frame > maxRevealAt + 2) {
+                    clearInterval(_scrambleTimer);
+                    el.textContent = text;
+                }
+            }, 32);
+        }
+
+        // ===== RIPPLE =====
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('.link');
+            if (!link) return;
+            const rect = link.getBoundingClientRect();
+            const r = document.createElement('span');
+            r.className = 'ripple';
+            r.style.cssText = `left:${e.clientX - rect.left}px;top:${e.clientY - rect.top}px`;
+            link.appendChild(r);
+            r.addEventListener('animationend', () => r.remove(), { once: true });
+        });
+
+        // ===== BOOT =====
+        document.addEventListener('DOMContentLoaded', () => {
+            _siteData = JSON.parse(document.getElementById('__SITE_DATA__').textContent);
+            LP.normalizeSiteData(_siteData);
+            LP.applyBackground(_siteData);
+            renderSite(_siteData);
+            document.getElementById('btn-it').addEventListener('click', () => setLang('it'));
+            document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+        });
+    </script>
+</body>
+</html>
