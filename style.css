@@ -99,30 +99,6 @@ body::before {
     background: rgba(255,255,255,0.06);
 }
 
-/* ===== HOME LINK ===== */
-.home-link {
-    position: fixed;
-    top: 16px;
-    left: 20px;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(7,8,11,0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: 0.72em;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    transition: color 0.2s, border-color 0.2s, transform 0.35s var(--spring);
-}
-.home-link:hover { color: var(--text-bright); border-color: rgba(241,238,231,0.4); transform: translateX(-3px); }
-
 /* ===== HEADER ===== */
 header { text-align: center; padding: 60px 0 48px; }
 
@@ -599,7 +575,6 @@ footer { position: relative; z-index: 1; text-align: center; padding: 48px 20px 
     .links-grid { grid-template-columns: 1fr; }
     .social-icons a { width: 42px; height: 42px; }
     .lang-toggle { top: 12px; right: 12px; }
-    .home-link { top: 12px; left: 12px; }
     .links-bento { grid-template-columns: repeat(2, 1fr); }
     .links-bento .link:nth-child(3n) { grid-column: span 2; }
 }
